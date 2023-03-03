@@ -1,0 +1,9 @@
+# Project exclude paths
+/amqp/target/
+/apigw/target/
+/car/target/
+/clients/target/
+/customer/target/
+/eureka-server/target/
+/notification/target/
+/storage/target/

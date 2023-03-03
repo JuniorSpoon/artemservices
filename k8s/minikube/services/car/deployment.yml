@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: car
+  labels:
+    app: car
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: car
+      labels:
+        app: car
+    spec:
+      containers:
+        - name: car
+          image: artemvor/car:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8081
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: kube
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: car
